@@ -67,8 +67,8 @@ if(!isset($_GET['id'])){
 
                     </div>
 
-
-                    <button type="submit" name="submit" class="btn btn-success btn-block">Update</button>
+                    <a href="view.php" class="btn btn-default">Back to list</a>           
+                    <button type="submit" name="submit" class="btn btn-success">Update</button>
                 </form>
             </div>
         </div>
