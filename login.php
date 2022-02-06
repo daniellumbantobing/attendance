@@ -9,12 +9,18 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
     $new_pass = md5($pass.$usrnm);
 
-    $result = $users->getUser($usrnm, $new_pass); 
-    if(!$result){
+    $result = $users->getUser($usrnm, $new_pass);
+     
+    if(!$_POST['username'] && !$_POST['password']){
+        echo '<div class="alert alert-danger" role="alert">
+        Please enter your username and password.
+        </div>';
+    }else if(!$result){
       echo '<div class="alert alert-danger" role="alert">
         Username or Password is incorrect! Please try again.
         </div>';
-    }else{
+    }
+    else{
             $_SESSION['username'] = $usrnm;
             $_SESSION['id'] = $result['id'];
             header('Location: view.php');
