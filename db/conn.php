@@ -1,15 +1,15 @@
 <?php
-    // $host = 'localhost';
-    // $db = 'attendance';
-    // $user = 'root';
-    // $pass = '';
-    // $charset = 'utf8mb4';
-    
-    $host = 'remotemysql.com';
-    $db = 'SmF5vEmfEl';
-    $user = 'SmF5vEmfEl';
-    $pass = 'ia4BOPwlep';
+    $host = 'localhost';
+    $db = 'attendance';
+    $user = 'root';
+    $pass = '';
     $charset = 'utf8mb4';
+    
+    // $host = 'remotemysql.com';
+    // $db = 'SmF5vEmfEl';
+    // $user = 'SmF5vEmfEl';
+    // $pass = 'ia4BOPwlep';
+    // $charset = 'utf8mb4';
 
     $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
 
@@ -22,8 +22,12 @@
     }
 
     require_once 'crud.php';
+    require_once 'user.php';
 
     $crud = new crud($pdo);
+    $users = new user($pdo);
+
+   // $user->insert("admin","password");
 
 
 ?>
